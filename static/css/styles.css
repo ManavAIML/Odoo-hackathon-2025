@@ -37,3 +37,158 @@ body.bg-image {
 .custom-btn:active {
     background-color: #1abcf3;   /* revert to original on click */
 }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #badeaf;
+    color: #333;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 15px;
+    transition: border 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.image-upload-container {
+    border: 2px dashed #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+    background: #f9f9f9;
+    margin-bottom: 15px;
+}
+
+.image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 15px;
+    display: none;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.submit-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #219653;
+}
+
+.required:after {
+    content: " *";
+    color: #e74c3c;
+}
+
+.price-container {
+    position: relative;
+}
+
+.price-container:before {
+    content: "₹";
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.price-input {
+    padding-left: 30px !important;
+}
+
+.gender-categories {
+    display: none;
+    padding: 15px;
+    background-color: #f1f8fe;
+    border-radius: 6px;
+    margin-top: 10px;
+    border: 1px solid #d6e9ff;
+}
+
+.size-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.size-option {
+    display: none;
+}
+
+.size-label {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.size-option:checked + .size-label {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
