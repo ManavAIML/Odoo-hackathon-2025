@@ -1,191 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style Shift - Modern Fashion Store</title>
-    <link rel="stylesheet" href="abc.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Shift - Modern Fashion Store</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">Style Shift</div>
-            
-            <!-- <nav class="nav-links">
-                <a href="#">Women</a>
-                <a href="#">Men</a>
-                <a href="#">Kids</a>
-                <a href="#">Home</a>
-                <a href="#">Brands</a>
-            </nav> -->
-            
-            <div class="user-actions">
-                <input type="checkbox" id="menuToggle" class="menu-toggle">
-                <label for="menuToggle" class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-                
-                <div class="dropdown-menu">
-                    <div class="menu-section">
-                        <h3>User Profile</h3>
-                        <a href="#">My Account</a>
-                        <a href="#">Order History</a>
-                        <a href="#">Settings</a>
-                    </div>
-                    <div class="menu-section">
-                        <h3>Categories</h3>
-                        <a href="#">Indianwear</a>
-                        <a href="#">Westernwear</a>
-                        <a href="#">Footwear</a>
-                        <a href="#">Accessories</a>
-                    </div>
-                    <div class="menu-section">
-                        <h3>Types</h3>
-                        <a href="#">Men</a>
-                        <a href="#">Women</a>
-                        <a href="#">Kids</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    
-   <!-- <main class="container">
-        <!-- Clothing Options Section -->
-        <!-- <div class="clothing-options">
-            <div class="option-card">
-                <h3>Indianwear</h3>
-            </div>
-            <div class="option-card">
-                <h3>Westernwear</h3>
-            </div>
-            <div class="option-card">
-                <h3>Men</h3>
-            </div>
-            <div class="option-card">
-                <h3>Footwear</h3>
-            </div>
-            <div class="option-card">
-                <h3>Lingerie</h3>
-            </div>
-            <div class="option-card">
-                <h3>Jewellery</h3>
-            </div>
-            <div class="option-card">
-                <h3>Bags</h3>
-            </div>
-            <div class="option-card">
-                <h3>Kids</h3>
-            </div>
-            <div class="option-card">
-                <h3>Home</h3>
-            </div>
-        </div>  -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">Style Shift</div>
 
-        <!-- Trending Now Section -->
-        <div class="trending-section">
-            <h2 class="section-title">Trending Now</h2>
-            <div class="trending-grid">
-                <div class="trending-item">
-                    <img src="https://images.bewakoof.com/t1080/men-s-black-hangin-astronaut-graphic-printed-oversized-t-shirt-504166-1741325888-1.jpg">
-                    <div class="item-info">
-                        <h3>Oversized Tshirt</h3>
-                        <span class="discount-badge">Up to 70% off</span>
-                    </div>
-                </div>
-                <div class="trending-item">
-                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR6dfd8d82ClnFs1nJ2q5LLm79-ITTIfmWeqrHXUkdAfA9aGSOIadSZWIJF-EMTQnYKCbwOmsoa4JGYYmyY-R77VSav1vrCafJXTyMx_gNX">
-                    <div class="item-info">
-                        <h3>Bottoms</h3>
-                        <span class="discount-badge">Up to 60% off</span>
-                    </div>
-                </div>
-                <div class="trending-item">
-                    <img src="https://images.bewakoof.com/t640/men-s-grey-oversized-joggers-646474-1736252675-1.jpg">
-                    <div class="item-info">
-                        <h3>Jogers</h3>
-                        <span class="discount-badge">Up to 75% off</span>
-                    </div>
-                </div>
-                <div class="trending-item">
-                    <img src="https://images.bewakoof.com/t640/men-s-black-graphic-printed-oversized-bomber-jacket-642557-1734329686-1.jpg">
-                    <div class="item-info">
-                        <h3>Jackets</h3>
-                        <span class="discount-badge">Up to 65% off</span>
-                    </div>
-                </div>
-            </div>
+      <div class="user-actions">
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <label for="menuToggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <div class="dropdown-menu">
+          <div class="menu-section">
+            <h3>User Profile</h3>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="#">My Account</a>
+            <a href="#">Order History</a>
+            <a href="#">Settings</a>
+          </div>
+          <div class="menu-section">
+            <h3>Categories</h3>
+            <a href="#">Indianwear</a>
+            <a href="#">Westernwear</a>
+            <a href="#">Footwear</a>
+            <a href="#">Accessories</a>
+          </div>
+          <div class="menu-section">
+            <h3>Types</h3>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+          </div>
         </div>
-        <!-- Mens -->
-        <div class="Mens">
-            <h2 class="section-title">Men</h2>
-            <div class="Men-grid">
-                <div class="Men-item">
-                    <img src="https://images.bewakoof.com/t640/men-s-black-grey-dark-knight-reflective-color-block-high-top-sneakers-640590-1727266931-1.jpg">
-                    <div class="item-info">
-                        <h3>Shoes</h3>
-                        <span class="discount-badge">Up to 70% off</span>
-                    </div>
-                </div>
-                <div class="Men-item">
-                    <img src="https://images.bewakoof.com/t640/men-s-black-who-needs-people-graphic-printed-oversized-sweatshirt-432381-1734675853-1.jpg">
-                    <div class="item-info">
-                        <h3>Sweat Shirts</h3>
-                        <span class="discount-badge">Up to 60% off</span>
-                    </div>
-                </div>
-                <div class="Men-item">
-                    <img src="https://images.bewakoof.com/t640/men-s-chocolate-brown-iron-man-graphic-printed-oversized-acid-wash-polo-t-shirt-677544-1748250351-1.jpg">
-                    <div class="item-info">
-                        <h3>Polo</h3>
-                        <span class="discount-badge">Up to 75% off</span>
-                    </div>
-                </div>
-                <div class="Men-item">
-                    <img src="https://images.bewakoof.com/t640/men-s-dusty-olive-green-cargo-carpenter-pants-585699-1751009989-1.jpg">
-                    <div class="item-info">
-                        <h3>Cargo</h3>
-                        <span class="discount-badge">Up to 65% off</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Trending Now Section -->
+    <div class="trending-section">
+      <h2 class="section-title">Trending Now</h2>
+      <div class="trending-grid">
+        <div class="trending-item">
+          <img src="https://images.bewakoof.com/t1080/men-s-black-hangin-astronaut-graphic-printed-oversized-t-shirt-504166-1741325888-1.jpg">
+          <div class="item-info">
+            <h3>Oversized Tshirt</h3>
+            <span class="discount-badge">Up to 70% off</span>
+          </div>
         </div>
-        <!-- Womens -->
-        <div class="Womens">
-            <h2 class="section-title">Women</h2>
-            <div class="Women-grid">
-                <div class="trending-item">
-                    <img src="https://images.bewakoof.com/t640/women-s-printed-long-kurti-dress-364702-1663921161-1.jpg">
-                    <div class="item-info">
-                        <h3>Kurti</h3>
-                        <span class="discount-badge">Up to 70% off</span>
-                    </div>
-                </div>
-                <div class="Women-item">
-                    <img src="https://images.bewakoof.com/t640/women-s-black-snoopy-logo-printed-oversized-polo-short-top-580646-1726571607-1.jpg">
-                    <div class="item-info">
-                        <h3>Crop Top</h3>
-                        <span class="discount-badge">Up to 60% off</span>
-                    </div>
-                </div>
-                <div class="Women-item">
-                    <img src="https://images.bewakoof.com/t640/women-s-black-white-mickey-typography-oversized-dress-582051-1726571831-1.jpg">
-                    <div class="item-info">
-                        <h3>Dress</h3>
-                        <span class="discount-badge">Up to 75% off</span>
-                    </div>
-                </div>
-                <div class="Women-item">
-                    <img src="https://images-cdn.ubuy.co.in/65607cd210825906de74540f-cardigan-women-chunky-autumn-winter.jpg">
-                    <div class="item-info">
-                        <h3>Cardigans</h3>
-                        <span class="discount-badge">Up to 65% off</span>
-                    </div>
-                </div>
-            </div>
+        <div class="trending-item">
+          <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR6dfd8d82ClnFs1nJ2q5LLm79-ITTIfmWeqrHXUkdAfA9aGSOIadSZWIJF-EMTQnYKCbwOmsoa4JGYYmyY-R77VSav1vrCafJXTyMx_gNX">
+          <div class="item-info">
+            <h3>Bottoms</h3>
+            <span class="discount-badge">Up to 60% off</span>
+          </div>
         </div>
-    </main>
+        <div class="trending-item">
+          <img src="https://images.bewakoof.com/t640/men-s-grey-oversized-joggers-646474-1736252675-1.jpg">
+          <div class="item-info">
+            <h3>Jogers</h3>
+            <span class="discount-badge">Up to 75% off</span>
+          </div>
+        </div>
+        <div class="trending-item">
+          <img src="https://images.bewakoof.com/t640/men-s-black-graphic-printed-oversized-bomber-jacket-642557-1734329686-1.jpg">
+          <div class="item-info">
+            <h3>Jackets</h3>
+            <span class="discount-badge">Up to 65% off</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mens -->
+    <div class="Mens">
+      <h2 class="section-title">Men</h2>
+      <div class="Men-grid">
+        <div class="Men-item">
+          <img src="https://images.bewakoof.com/t640/men-s-black-grey-dark-knight-reflective-color-block-high-top-sneakers-640590-1727266931-1.jpg">
+          <div class="item-info">
+            <h3>Shoes</h3>
+            <span class="discount-badge">Up to 70% off</span>
+          </div>
+        </div>
+        <div class="Men-item">
+          <img src="https://images.bewakoof.com/t640/men-s-black-who-needs-people-graphic-printed-oversized-sweatshirt-432381-1734675853-1.jpg">
+          <div class="item-info">
+            <h3>Sweat Shirts</h3>
+            <span class="discount-badge">Up to 60% off</span>
+          </div>
+        </div>
+        <div class="Men-item">
+          <img src="https://images.bewakoof.com/t640/men-s-chocolate-brown-iron-man-graphic-printed-oversized-acid-wash-polo-t-shirt-677544-1748250351-1.jpg">
+          <div class="item-info">
+            <h3>Polo</h3>
+            <span class="discount-badge">Up to 75% off</span>
+          </div>
+        </div>
+        <div class="Men-item">
+          <img src="https://images.bewakoof.com/t640/men-s-dusty-olive-green-cargo-carpenter-pants-585699-1751009989-1.jpg">
+          <div class="item-info">
+            <h3>Cargo</h3>
+            <span class="discount-badge">Up to 65% off</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Womens -->
+    <div class="Womens">
+      <h2 class="section-title">Women</h2>
+      <div class="Women-grid">
+        <a href="{{ url_for('kurti_page') }}">
+          <div class="trending-item">
+            <img src="https://images.bewakoof.com/t640/women-s-printed-long-kurti-dress-364702-1663921161-1.jpg">
+            <div class="item-info">
+              <h3>Kurti</h3>
+              <span class="discount-badge">Up to 70% off</span>
+            </div>
+          </div>
+        </a>
+        <a href="{{ url_for('crop_top_page') }}">
+          <div class="Women-item">
+            <img src="https://images.bewakoof.com/t640/women-s-black-snoopy-logo-printed-oversized-polo-short-top-580646-1726571607-1.jpg">
+            <div class="item-info">
+              <h3>Crop Top</h3>
+              <span class="discount-badge">Up to 60% off</span>
+            </div>
+          </div>
+        </a>
+        <a href="{{ url_for('dress_page') }}">
+          <div class="Women-item">
+            <img src="https://images.bewakoof.com/t640/women-s-black-white-mickey-typography-oversized-dress-582051-1726571831-1.jpg">
+            <div class="item-info">
+              <h3>Dress</h3>
+              <span class="discount-badge">Up to 75% off</span>
+            </div>
+          </div>
+        </a>
+        <a href="{{ url_for('cardigans_page') }}">
+          <div class="Women-item">
+            <img src="https://images-cdn.ubuy.co.in/65607cd210825906de74540f-cardigan-women-chunky-autumn-winter.jpg">
+            <div class="item-info">
+              <h3>Cardigans</h3>
+              <span class="discount-badge">Up to 65% off</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
