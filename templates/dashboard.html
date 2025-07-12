@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h1>Welcome, {{ user.username }}</h1>
+
+    <div class="profile-section">
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Points Balance:</strong> {{ user.points }}</p>
+    </div>
+
+    <h2>Your Uploaded Items</h2>
+    <ul>
+        {% for item in user.items %}
+            <li>{{ item.title }} - Status: {{ item.status }}</li>
+        {% else %}
+            <li>No items uploaded yet.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Your Swap History</h2>
+    <ul>
+        {% for swap in user.swaps %}
+            <li>{{ swap.item_title }} - Status: {{ swap.status }}</li>
+        {% else %}
+            <li>No swaps yet.</li>
+        {% endfor %}
+    </ul>
+
+    <div class="actions">
+        <a href="{{ url_for('add_item') }}" class="custom-btn">Add New Item</a>
+        <a href="{{ url_for('browse_items') }}" class="custom-btn">Browse Items</a>
+        <a href="{{ url_for('logout') }}" class="custom-btn">Logout</a>
+    </div>
+</div>
+{% endblock %}
