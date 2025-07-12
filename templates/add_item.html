@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Clothing Item</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>List Your Clothing Item</h1>
+        <form id="itemForm">
+            <div class="form-group">
+                <label for="itemImage" class="required">Item Image</label>
+                <div class="image-upload-container">
+                    <input type="file" id="itemImage" name="itemImage" accept="image/*" required>
+                    <p>Click to upload or drag and drop</p>
+                    <img id="imagePreview" class="image-preview" alt="Image Preview">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="title" class="required">Title</label>
+                <input type="text" id="title" name="title" placeholder="e.g., Blue Denim Jeans, Floral Summer Dress" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="description" class="required">Description</label>
+                <textarea id="description" name="description" placeholder="Describe the item in detail (color, material, brand, etc.)" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="gender" class="required">Gender</label>
+                <select id="gender" name="gender" required onchange="showGenderCategories()">
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            
+            <div id="maleCategories" class="gender-categories">
+                <label for="maleCategory" class="required">Men's Clothing Category</label>
+                <select id="maleCategory" name="maleCategory">
+                    <option value="">Select category</option>
+                    <option value="shirts">Shirts</option>
+                    <option value="t-shirts">T-Shirts</option>
+                    <option value="jeans">Jeans</option>
+                    <option value="trousers">Trousers</option>
+                    <option value="shorts">Shorts</option>
+                    <option value="jackets">Jackets</option>
+                    <option value="suits">Suits & Blazers</option>
+                    <option value="ethnic">Ethnic Wear</option>
+                    <option value="sportswear">Sportswear</option>
+                    <option value="innerwear">Innerwear</option>
+                </select>
+            </div>
+            
+            <div id="femaleCategories" class="gender-categories">
+                <label for="femaleCategory" class="required">Women's Clothing Category</label>
+                <select id="femaleCategory" name="femaleCategory">
+                    <option value="">Select category</option>
+                    <option value="dresses">Dresses</option>
+                    <option value="tops">Tops & Tees</option>
+                    <option value="jeans">Jeans</option>
+                    <option value="skirts">Skirts</option>
+                    <option value="leggings">Leggings</option>
+                    <option value="jackets">Jackets</option>
+                    <option value="ethnic">Ethnic Wear</option>
+                    <option value="sarees">Sarees</option>
+                    <option value="lingerie">Lingerie</option>
+                    <option value="sportswear">Sportswear</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="type">Clothing Type/Style</label>
+                <input type="text" id="type" name="type" placeholder="e.g., Slim Fit, A-Line, V-Neck, Anarkali">
+            </div>
+            
+            <div class="form-group">
+                <label class="required">Size</label>
+                <div class="size-options">
+                    <input type="radio" id="size-s" name="size" value="S" class="size-option" required>
+                    <label for="size-s" class="size-label">S</label>
+                    
+                    <input type="radio" id="size-m" name="size" value="M" class="size-option">
+                    <label for="size-m" class="size-label">M</label>
+                    
+                    <input type="radio" id="size-l" name="size" value="L" class="size-option">
+                    <label for="size-l" class="size-label">L</label>
+                    
+                    <input type="radio" id="size-xl" name="size" value="XL" class="size-option">
+                    <label for="size-xl" class="size-label">XL</label>
+                    
+                    <input type="radio" id="size-xxl" name="size" value="XXL" class="size-option">
+                    <label for="size-xxl" class="size-label">XXL</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="price" class="required">Price</label>
+                <div class="price-container">
+                    <input type="number" id="price" name="price" min="0" step="1" class="price-input" placeholder="Enter price in INR" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="tags">Tags (comma separated)</label>
+                <input type="text" id="tags" name="tags" placeholder="e.g., casual, formal, cotton, wedding, party">
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="submit-btn">List Item for Sale</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Image preview functionality
+        document.getElementById('itemImage').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('imagePreview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Show gender-specific categories
+        function showGenderCategories() {
+            const gender = document.getElementById('gender').value;
+            document.getElementById('maleCategories').style.display = 'none';
+            document.getElementById('femaleCategories').style.display = 'none';
+            
+            if (gender === 'male') {
+                document.getElementById('maleCategories').style.display = 'block';
+                document.getElementById('maleCategory').required = true;
+                document.getElementById('femaleCategory').required = false;
+            } else if (gender === 'female') {
+                document.getElementById('femaleCategories').style.display = 'block';
+                document.getElementById('femaleCategory').required = true;
+                document.getElementById('maleCategory').required = false;
+            }
+        }
+
+        // Form submission handling
+        document.getElementById('itemForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Validate that a gender category is selected
+            const gender = document.getElementById('gender').value;
+            if ((gender === 'male' && !document.getElementById('maleCategory').value) || 
+                (gender === 'female' && !document.getElementById('femaleCategory').value)) {
+                alert('Please select a clothing category for the selected gender');
+                return;
+            }
+            
+            // Validate size is selected
+            if (!document.querySelector('input[name="size"]:checked')) {
+                alert('Please select a size');
+                return;
+            }
+            
+            // Here you would typically send the form data to a server
+            alert('Clothing item submitted successfully!');
+            
+            // Reset form after submission
+            this.reset();
+            document.getElementById('imagePreview').style.display = 'none';
+            document.getElementById('maleCategories').style.display = 'none';
+            document.getElementById('femaleCategories').style.display = 'none';
+        });
+
+        // Initialize by hiding both category sections
+        document.getElementById('maleCategories').style.display = 'none';
+        document.getElementById('femaleCategories').style.display = 'none';
+    </script>
+</body>
+</html>
