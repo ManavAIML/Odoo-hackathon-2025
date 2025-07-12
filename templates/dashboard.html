@@ -6,13 +6,17 @@
 
     <div class="profile-section">
         <p><strong>Email:</strong> {{ user.email }}</p>
-        <p><strong>Points Balance:</strong> {{ user.points }}</p>
+        <p><strong>Points Balance:</strong> {{ user.points if user.points else 0 }}</p>
     </div>
 
     <h2>Your Uploaded Items</h2>
     <ul>
-        {% for item in user.items %}
-            <li>{{ item.title }} - Status: {{ item.status }}</li>
+        {% for item in items %}
+            <li>
+                <strong>{{ item.title }}</strong> - ₹{{ item.price }}<br>
+                {{ item.description }}<br>
+                Size: {{ item.size }} | Gender: {{ item.gender }} | Category: {{ item.category }}
+            </li>
         {% else %}
             <li>No items uploaded yet.</li>
         {% endfor %}
@@ -20,17 +24,13 @@
 
     <h2>Your Swap History</h2>
     <ul>
-        {% for swap in user.swaps %}
-            <li>{{ swap.item_title }} - Status: {{ swap.status }}</li>
-        {% else %}
-            <li>No swaps yet.</li>
-        {% endfor %}
+        <li>No swaps yet.</li>
     </ul>
 
     <div class="actions">
         <a href="{{ url_for('add_item') }}" class="custom-btn">Add New Item</a>
-        <a href="{{ url_for('browse_items') }}" class="custom-btn">Browse Items</a>
         <a href="{{ url_for('logout') }}" class="custom-btn">Logout</a>
+        <a href="{{ url_for('view_cart') }}" class="custom-btn">View Cart</a>
     </div>
 </div>
 {% endblock %}
