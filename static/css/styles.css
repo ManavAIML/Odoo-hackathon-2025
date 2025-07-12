@@ -1025,3 +1025,130 @@ textarea {
     color: white;
     border-color: #3498db;
 }
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.product-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.gallery {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.main-image {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+.main-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnails img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.thumbnails img.active {
+    border: 2px solid #ff3f6c;
+}
+
+.details {
+    flex: 1;
+    padding-left: 30px;
+}
+
+/* ... (rest of your CSS remains unchanged) ... */
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.add-to-bag, .wishlist {
+    padding: 12px 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-to-bag {
+    background: #ff3f6c;
+    color: white;
+    flex: 2;
+}
+
+.wishlist {
+    background: white;
+    border: 1px solid #ddd;
+    flex: 1;
+}
+
+/* Swap Options */
+.swap-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.swap-btn, .points-btn {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.swap-btn {
+    border-color: #2874f0;
+    color: #2874f0;
+}
+
+.points-btn {
+    border-color: #ffb800;
+    color: #ffb800;
+}
