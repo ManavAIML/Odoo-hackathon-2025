@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral Dress - FashionStore</title>
+    <!-- FIXED: Static file paths -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>OverSized Tshirt</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Bottoms</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Joggers</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Jackets</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Shoes</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Sweatshirt</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Polo</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Cargo</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Kurti</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Crop-topt</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Dress</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="/static/images/dress1.jpg" id="zoom-image" alt="Floral Dress">
+            </div>
+            <div class="thumbnails">
+                <img src="/static/images/dress1.jpg" class="active" onclick="changeImage(this)">
+                <img src="/static/images/dress2.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+            <h1>Cardigans</h1>
+            <p class="brand">By <a href="#">UrbanThreads</a></p>
+            
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(1,024 reviews)</span>
+            </div>
+
+            <div class="price">
+                <span class="current">₹1,299</span>
+                <span class="original">₹2,599</span>
+                <span class="discount">50% OFF</span>
+            </div>
+
+            <!-- Color Picker -->
+            <div class="color-options">
+                <h3>Color: <span id="selected-color">Navy Blue</span></h3>
+                <div class="color-swatches">
+                    <div class="swatch active" style="background-color: #192a56;" data-color="Navy Blue"></div>
+                    <div class="swatch" style="background-color: #e84118;" data-color="Brick Red"></div>
+                </div>
+            </div>
+
+            <!-- Size Picker -->
+            <div class="size-options">
+                <h3>Size: <a href="#">Size Guide</a></h3>
+                <div class="size-buttons">
+                    <button class="size">XS</button>
+                    <button class="size active">S</button>
+                    <button class="size">M</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-bag" id="add-to-bag">
+                    <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                </button>
+                <button class="wishlist" id="wishlist">
+                    <i class="far fa-heart"></i> WISHLIST
+                </button>
+            </div>
+
+            <!-- Swap/Redeem -->
+            <div class="swap-options">
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i> REQUEST SWAP
+                </button>
+                <button class="points-btn" id="points-btn">
+                    <i class="fas fa-coins"></i> REDEEM (500 PTS)
+                </button>
+            </div>
+
+            <!-- Uploader Info -->
+            <div class="uploader-info">
+                <img src="/static/images/user-avatar.jpg" alt="Uploader">
+                <div>
+                    <h4>Listed by <span>Fashionista99</span></h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.8 (128 swaps)
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, 4km from you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIXED: JavaScript file path -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
