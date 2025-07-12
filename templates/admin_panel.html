@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Shift Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+  <div class="login-container">
+    <div class="login-box">
+        <div class="logo">
+            <h1>Style Shift</h1>
+            <p>Admin Panel</p>
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+  <div class="admin-container">
+    <aside class="sidebar">
+        <h2>Style Shift</h2>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('orders') }}">Orders</a></li>
+                <li><a href="{{ url_for('products_page') }}">Products</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Welcome, {{ username }}</h1>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Orders</h3>
+                <p>{{ stats.total_orders }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Revenue</h3>
+                <p>${{ "%.2f"|format(stats.total_revenue) }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Products</h3>
+                <p>{{ stats.total_products }}</p>
+            </div>
+        </div>
+
+        <h2>Recent Orders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in stats.recent_orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.customer }}</td>
+                    <td>{{ order.date }}</td>
+                    <td>${{ "%.2f"|format(order.amount) }}</td>
+                    <td><span class="status status-{{ order.status }}">{{ order.status|title }}</span></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</div><div class="admin-container">
+    <aside class="sidebar">
+        <h2>Style Shift</h2>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('orders') }}">Orders</a></li>
+                <li><a href="{{ url_for('products_page') }}">Products</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Orders</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.customer }}</td>
+                    <td>{{ order.date }}</td>
+                    <td>${{ "%.2f"|format(order.amount) }}</td>
+                    <td><span class="status status-{{ order.status }}">{{ order.status|title }}</span></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</div>
+  <div class="admin-container">
+    <aside class="sidebar">
+        <h2>Style Shift</h2>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('orders') }}">Orders</a></li>
+                <li><a href="{{ url_for('products_page') }}">Products</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Products</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>${{ "%.2f"|format(product.price) }}</td>
+                    <td>{{ product.stock }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</div>
+</html>
